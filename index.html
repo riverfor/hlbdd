@@ -6,8 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>This Site Is Under Maintenance</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreamer-paul/kico-style/kico.css"/>
-    <link rel="stylesheet" href="index.css"/>
+    <style>
+    :root{
+        font-size: 16px;
+
+        --red: #fa3532;
+        --yellow: #ffb03a;
+        --dark-red: #b93636;
+    }
+
+    @media screen and (max-width: 768px){
+        .font-auto{ font-size: 14px }
+    }
+
+    html, body{ height: 100% }
+
+    p{ line-height: 1.8 }
+    p:last-child{ margin-bottom: 0 }
+
+    .btn{
+        border: none;
+        outline: none;
+
+        color: #fff;
+        font: inherit;
+        cursor: pointer;
+        padding: .75em 2em;
+        border-radius: 1em;
+        background: var(--red);
+        transition: background .3s;
+    }
+    .btn:active{
+        background: #c20805;
+    }
+
+    body{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: Montserrat, SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+    }
+
+    main{
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+
+    .board{
+        margin: auto;
+        padding: 1em;
+        max-width: 40em;
+        text-align: center;
+    }
+
+    .board img{
+        width: 30em;
+        max-width: 80%;
+    }
+
+    .board h2{
+        margin-top: 2.5em;
+        margin-bottom: 1em;
+        color: var(--yellow);
+        letter-spacing: .05em;
+    }
+    </style>
 </head>
 <body>
 <main>
@@ -17,7 +81,16 @@
         </p>
         <h2>This Site Is Under Maintenance</h2>
         <p>Dear all, the technical issues remain unresolved and while we are working hard, we understand it is causing frustration. We will be postponing this event by a week and we will notify you of details the soonest we can...</p>
+        <p>
+            <button class="btn">Refresh</button>
+        </p>
     </div>
 </main>
+<script>
+    document.getElementsByClassName("btn")[0].onclick = function (e) {
+        e.preventDefault();
+        location.reload();
+    }
+</script>
 </body>
 </html>
